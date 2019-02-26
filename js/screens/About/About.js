@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     console.log(this.props.data.allConducts);
     return (
-      <View style={styles.aboutContainer}>
+      <View style={styles.container}>
         <ScrollView>
           <Image
             style={styles.logo}

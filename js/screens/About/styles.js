@@ -1,18 +1,14 @@
 import { StyleSheet } from 'react-native';
+import { Container } from '../../config/styles';
 
 const styles = StyleSheet.create({
-  aboutContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    paddingRight: 25,
-    paddingLeft: 25
+  container: {
+    ...Container
   },
   logo: {
     alignSelf: 'center',
-    marginTop: 15,
-    marginBottom: 15,
+    marginTop: 20,
+    marginBottom: 20,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   title: {

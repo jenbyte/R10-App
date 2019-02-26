@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Header } from '../../config/styles';
 
 export default class MapsContainer extends Component {
   constructor(props) {
