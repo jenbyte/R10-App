@@ -8,6 +8,12 @@ export default class FavesContainer extends Component {
     this.state = {};
   }
 
+  static navigationOptions = {
+    title: 'Faves',
+    headerTintColor: '#fff',
+    headerTitleStyle: { ...Header }
+  };
+
   render() {
     return (
       <View>

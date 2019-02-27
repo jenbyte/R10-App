@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, withNavigation } from 'react-navigation';
 
-export default class Schedule extends Component {
+class Schedule extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -12,7 +12,15 @@ export default class Schedule extends Component {
           renderItem={({ item }) => {
             return (
               <TouchableHighlight //   style={styles.event}
-                onPress={() => this.props.navigation.navigate('Session')}
+                key={item.id}
+                onPress={() =>
+                  this.props.navigation.navigate('Session', {
+                    title: item.title,
+                    location: item.location,
+                    time: item.startTime,
+                    id: item.id
+                  })
+                }
               >
                 <View style={styles.event}>
                   <Text style={styles.listTitle}>{item.title} </Text>
@@ -31,3 +39,5 @@ export default class Schedule extends Component {
     );
   }
 }
+
+export default withNavigation(Schedule);

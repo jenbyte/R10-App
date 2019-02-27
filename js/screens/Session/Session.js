@@ -3,27 +3,15 @@ import { Button, View, Text, Image, SectionList } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 
-export default class Schedule extends Component {
+export default class Session extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SectionList
-          renderItem={({ item }) => {
-            return (
-              <View style={styles.schedule}>
-                <Text style={styles.location}>{item.location}</Text>
-                <Text style={styles.listTitle}>{item.title} </Text>
-                <Text style={styles.time}>{item.location}</Text>
-                <Button title="Remove from Faves" />
-              </View>
-            );
-          }}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text style={styles.time}>{moment(title).format('LT')}</Text>
-          )}
-          sections={this.props.data}
-          keyExtractor={item => item.id}
-        />
+        {/* <Text style={styles.location}> {this.props.location} </Text>
+        <Text style={styles.title}> {this.props.title} </Text>
+        <Text style={styles.time}> {this.props.time} </Text> */}
+
+        <Button title="Remove from Faves" />
       </View>
     );
   }

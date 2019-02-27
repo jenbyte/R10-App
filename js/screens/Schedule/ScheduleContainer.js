@@ -21,16 +21,9 @@ export default class ScheduleContainer extends Component {
             allSessions {
               id
               title
-              description
               startTime
               location
-              speaker {
-                bio
-                id
-                image
-                name
-                url
-              }
+              description
             }
           }
         `}

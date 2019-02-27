@@ -14,18 +14,20 @@ export default class SessionContainer extends Component {
   };
 
   render() {
+    const { navigation } = this.props;
+    const id = navigation.getParam('id', 'Peter');
+    const title = navigation.getParam('title', 'Peter');
+    const location = navigation.getParam('location', 'Peter');
+    const time = navigation.getParam('time', 'Peter');
+
     return (
       <Query
         query={gql`
-          {
-            allSessions {
+          query allSessions($id: ID) {
+            allSessions(filter: { id: $id }) {
               id
-              title
               description
-              startTime
-              location
               speaker {
-                bio
                 id
                 image
                 name
@@ -39,7 +41,17 @@ export default class SessionContainer extends Component {
           if (loading) return <ActivityIndicator />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
           console.log(error);
-          return <Session data={formatSessionData(data.allSessions)} />;
+          console.log(data);
+          return (
+            <Session
+              data={data.allSessions}
+              title={title}
+              time={time}
+              location={location}
+              id={id}
+              navigation={this.props.navigation}
+            />
+          );
         }}
       </Query>
     );

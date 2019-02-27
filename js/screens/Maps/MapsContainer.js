@@ -8,6 +8,12 @@ export default class MapsContainer extends Component {
     this.state = {};
   }
 
+  static navigationOptions = {
+    title: 'Map',
+    headerTintColor: '#fff',
+    headerTitleStyle: { ...Header }
+  };
+
   render() {
     return (
       <View>

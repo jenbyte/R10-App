@@ -5,6 +5,12 @@ import About from './About';
 import { Header } from '../../config/styles';
 
 export default class AboutContainer extends Component {
+  static navigationOptions = {
+    title: 'About',
+    headerTintColor: '#fff',
+    headerTitleStyle: { ...Header }
+  };
+
   render() {
     return (
       <Query
