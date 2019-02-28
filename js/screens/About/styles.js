@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Container } from '../../config/styles';
+import { Container, Font, FontSize, Divider } from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,28 +8,38 @@ const styles = StyleSheet.create({
   logo: {
     alignSelf: 'center',
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 25,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
-  title: {
-    // color: '#999999',
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 15
+  divider: {
+    ...Divider,
+    marginBottom: 20
   },
 
-  flatList: {
-    lineHeight: 5
+  title: {
+    fontSize: FontSize.title,
+    fontFamily: Font.reg,
+
+    marginBottom: 15
   },
   listTitle: {
     color: '#9963ea',
     fontWeight: '600',
-    marginTop: 15,
+    fontFamily: Font.reg,
+    fontSize: FontSize.subtitle,
+
     marginBottom: 15
   },
   description: {
-    // color: '#999'
+    fontFamily: Font.light,
+    fontSize: FontSize.body,
+    lineHeight: 24,
+    marginBottom: 20
+  },
+  copyright: {
+    fontFamily: Font.light,
+    fontSize: FontSize.body,
+    marginBottom: 20
   }
 });
 

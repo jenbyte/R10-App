@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Header } from '../../config/styles';
+import { FavesContext } from '../../context';
 
 export default class FavesContainer extends Component {
   constructor(props) {
@@ -16,9 +17,11 @@ export default class FavesContainer extends Component {
 
   render() {
     return (
-      <View>
-        <Text> Faves! </Text>
-      </View>
+      <FavesContext.Consumer>
+        <View>
+          <Text> Faves! </Text>
+        </View>
+      </FavesContext.Consumer>
     );
   }
 }

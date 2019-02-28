@@ -5,6 +5,7 @@ import Schedule from './Schedule';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { ActivityIndicator, Text } from 'react-native';
 import { Header } from '../../config/styles';
+import { FavesContext } from '../../context';
 
 export default class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -24,17 +25,30 @@ export default class ScheduleContainer extends Component {
               startTime
               location
               description
+
+              speaker {
+                id
+                image
+                name
+                url
+                bio
+              }
             }
           }
         `}
       >
-        {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
-          if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log(data);
-          console.log(error);
-          return <Schedule data={formatSessionData(data.allSessions)} />;
-        }}
+        <FavesContext.Consumer>
+          {({ loading, error, data }) => {
+            if (loading)
+              return (
+                <ActivityIndicator size="large" style={{ height: '100%' }} />
+              );
+            if (error) return <Text>{`Error! ${error.message}`}</Text>;
+            console.log(error);
+            console.log(data);
+            return <Schedule data={formatSessionData(data.allSessions)} />;
+          }}
+        </FavesContext.Consumer>
       </Query>
     );
   }

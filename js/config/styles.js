@@ -4,8 +4,8 @@ const { width, height } = Dimensions.get('window');
 
 export const Container = {
   flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
+  // justifyContent: 'center',
+  // alignItems: 'center',
   paddingRight: 25,
   paddingLeft: 25
 };
@@ -21,8 +21,15 @@ export const Colors = {
 };
 
 export const Font = {
-  light: '../assets/fonts/Montserrat-Light.ttf',
+  light: 'Montserrat-Light',
   reg: 'Montserrat-Regular'
+};
+
+export const FontSize = {
+  title: 24,
+  subtitle: 20,
+  body: 16,
+  description: 18
 };
 
 export const Header = {
@@ -31,9 +38,20 @@ export const Header = {
   fontWeight: 'bold'
 };
 
+export const Divider = {
+  borderBottomWidth: StyleSheet.hairlineWidth,
+  borderBottomColor: '#999999'
+};
+
+export const Button = {
+  height: 45,
+  // width: '70%',
+  justifyContent: 'center',
+  margin: 15,
+  borderRadius: 25
+};
+
 // ...Plateform.select({
 //   ios: { color: '' },
 //   android: { color: '' }
 // })
-
-// borderBottomWidth: StyleSheet.hairlineWidth,

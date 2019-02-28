@@ -12,6 +12,7 @@ class About extends Component {
             style={styles.logo}
             source={require('../../assets/images/r10_logo.png')}
           />
+          <View style={styles.divider} />
           <Text style={styles.description}>
             R10 is a conference that focuses on just about any topic related to
             dev.
@@ -19,12 +20,11 @@ class About extends Component {
 
           <Text style={styles.title}>Date &amp; Venue</Text>
           <Text style={styles.description}>
-            R10 is a conference that focuses on just about any topic related to
-            dev.
+            The R10 conference will take place on Tuesday, June 27, 2019 in
+            Vancouver, BC.
           </Text>
           <Text style={styles.title}>Code of Conduct</Text>
           <FlatList
-            //   style={{ color: 'white', background: 'yellow' }}
             data={this.props.data.allConducts}
             renderItem={({ item }) => {
               return (
@@ -36,6 +36,10 @@ class About extends Component {
             }}
             keyExtractor={item => item.id}
           />
+          <View style={styles.divider} />
+          <Text style={styles.copyright}>
+            &copy; Jennifer Yiu, RED Academy 2019
+          </Text>
         </ScrollView>
       </View>
     );

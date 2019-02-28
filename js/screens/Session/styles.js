@@ -1,37 +1,63 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+import {
+  Container,
+  Colors,
+  Font,
+  FontSize,
+  Divider
+} from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    paddingRight: 20,
-    paddingLeft: 20
-  },
-  logo: {
-    borderBottomWidth: 1,
-    borderColor: '#e6e6e6'
-  },
-  title: {
-    // color: '#999999',
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 15
+    paddingRight: 25,
+    paddingLeft: 25,
+    height: Dimensions.get('window').height
   },
 
-  flatList: {
-    lineHeight: 5
+  title: {
+    fontSize: FontSize.title,
+    fontFamily: Font.reg
   },
-  listTitle: {
-    color: '#9963ea',
-    fontWeight: '600',
+  location: {
+    color: Colors.mediumGrey,
+    fontWeight: 'bold',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description,
+
+    paddingTop: 25,
+    paddingBottom: 15
+  },
+  time: {
+    color: Colors.red,
+    fontWeight: 'bold',
+    fontSize: FontSize.description,
     marginTop: 15,
     marginBottom: 15
   },
   description: {
-    // color: '#999'
+    fontFamily: Font.light,
+    fontSize: FontSize.description,
+    lineHeight: 26
+  },
+
+  speaker: {
+    fontFamily: Font.reg,
+    fontSize: FontSize.description,
+
+    paddingRight: 25,
+    paddingLeft: 25
+  },
+
+  divider: {
+    ...Divider,
+    marginTop: 20,
+    marginBottom: 20
+  },
+  button: {
+    color: 'white',
+    alignSelf: 'center',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description
   }
 });
 

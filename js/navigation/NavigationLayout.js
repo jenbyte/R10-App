@@ -85,11 +85,17 @@ export default createBottomTabNavigator(
       activeTintColor: '#fff',
       inactiveTintColor: '#999',
       labelStyle: {
-        fontSize: 10,
-        fontFamily: 'Montserrat'
+        fontSize: 11,
+        fontFamily: 'Montserrat',
+        lineHeight: 0
       },
       style: {
-        backgroundColor: '#000'
+        backgroundColor: '#000',
+
+        // alignItems: 'center',
+        // justifyContent: 'space-around',
+        height: 55,
+        paddingTop: 8
       }
     }
   }

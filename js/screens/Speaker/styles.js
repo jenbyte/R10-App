@@ -1,37 +1,58 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+import { Container, Colors, Font, FontSize } from '../../config/styles';
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#000',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    paddingRight: 20,
-    paddingLeft: 20
+    justifyContent: 'center',
+    paddingRight: 25,
+    paddingLeft: 25,
+    width: '100%',
+    height: Dimensions.get('window').height
   },
-  logo: {
-    borderBottomWidth: 1,
-    borderColor: '#e6e6e6'
+  wrapper: {
+    backgroundColor: '#fff',
+    borderRadius: 7,
+    height: '75%',
+    padding: 20,
+    paddingTop: 25
   },
-  title: {
-    // color: '#999999',
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 15
+  scroll: {
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
-  flatList: {
-    lineHeight: 5
+  bioHeading: {
+    color: '#fff',
+    fontSize: FontSize.description,
+    fontFamily: Font.reg,
+    // height: 150,
+    // alignSelf: 'center',
+    justifyContent: 'center',
+    marginBottom: 25
   },
-  listTitle: {
-    color: '#9963ea',
-    fontWeight: '600',
+  title: {
+    alignSelf: 'center',
+    fontSize: FontSize.title,
+    fontFamily: Font.reg,
     marginTop: 15,
     marginBottom: 15
   },
   description: {
-    // color: '#999'
+    alignSelf: 'center',
+    fontFamily: Font.light,
+    fontSize: FontSize.body,
+    lineHeight: 24,
+    marginBottom: 15
+  },
+  wikiLink: {
+    color: 'white',
+    alignSelf: 'center',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description
   }
 });
 
