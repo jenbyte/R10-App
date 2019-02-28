@@ -37,18 +37,23 @@ export default class ScheduleContainer extends Component {
           }
         `}
       >
-        <FavesContext.Consumer>
-          {({ loading, error, data }) => {
-            if (loading)
-              return (
-                <ActivityIndicator size="large" style={{ height: '100%' }} />
-              );
-            if (error) return <Text>{`Error! ${error.message}`}</Text>;
-            console.log(error);
-            console.log(data);
-            return <Schedule data={formatSessionData(data.allSessions)} />;
-          }}
-        </FavesContext.Consumer>
+        {/* <FavesContext.Consumer> */}
+        {({ loading, error, faveIds, data }) => {
+          if (loading)
+            return (
+              <ActivityIndicator size="large" style={{ height: '100%' }} />
+            );
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          console.log(error);
+          return (
+            <Schedule
+              faveIds={faveIds}
+              data={formatSessionData(data.allSessions)}
+              navigation={this.props.navigation}
+            />
+          );
+        }}
+        {/* </FavesContext.Consumer> */}
       </Query>
     );
   }

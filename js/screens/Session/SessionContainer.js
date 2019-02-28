@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import Session from './Session';
 import { ActivityIndicator, Text, View } from 'react-native';
 import { Header } from '../../config/styles';
-import { FavesContext } from '../../context';
+import FavesContext from '../../context';
 
 export default class SessionContainer extends Component {
   static navigationOptions = {
@@ -17,11 +15,19 @@ export default class SessionContainer extends Component {
     const session = this.props.navigation.getParam('session');
 
     return (
-      // <FavesContext.Consumer>
-      <View>
-        <Session data={session} navigation={this.props.navigation} />
-      </View>
-      // </FavesContext.Consumer>
+      <FavesContext.Consumer>
+        {({ faveIds, setFaveId, removeFaveId }) => (
+          <Session
+            faveIds={faveIds}
+            navigation={this.props.navigation}
+            data={session}
+          />
+        )}
+      </FavesContext.Consumer>
+
+      // <View>
+      //   <Session data={session} navigation={this.props.navigation} />
+      // </View>
     );
   }
 }

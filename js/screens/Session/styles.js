@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 import {
   Container,
   Colors,
@@ -13,7 +13,9 @@ const styles = StyleSheet.create({
     paddingLeft: 25,
     height: Dimensions.get('window').height
   },
-
+  flex: {
+    flexDirection: 'row'
+  },
   title: {
     fontSize: FontSize.title,
     fontFamily: Font.reg
@@ -58,7 +60,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontFamily: Font.reg,
     fontSize: FontSize.description
-  }
+  },
+  platform: {}
 });
 
 export default styles;

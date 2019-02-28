@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
-import { createStackNavigator, withNavigation } from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 
 class Schedule extends Component {
   render() {

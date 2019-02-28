@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  createBottomTabNavigator
-} from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 import AboutScreen from '../screens/About';
 import MapScreen from '../screens/Maps';
 import FavesScreen from '../screens/Faves';
@@ -10,6 +7,7 @@ import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sharedNavigationOptions } from './config';
+import { Font, Colors } from '../config/styles';
 
 const ScheduleStack = createStackNavigator(
   {
@@ -55,7 +53,7 @@ const AboutStack = createStackNavigator(
 );
 
 // Dedicated stacks for Schedule and Faves will go here too!
-export default createBottomTabNavigator(
+export default createDrawerNavigator(
   {
     Schedule: ScheduleStack,
     Map: MapStack,
@@ -64,38 +62,37 @@ export default createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ tintColor }) => {
+      drawerIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
 
         let iconName;
         if (routeName === 'Schedule') {
-          iconName = `ios-calendar`;
+          iconName = `md-calendar`;
         } else if (routeName === 'Map') {
-          iconName = `ios-map`;
+          iconName = `md-map`;
         } else if (routeName === 'Faves') {
-          iconName = `ios-heart`;
+          iconName = `md-heart`;
         } else if (routeName === 'About') {
-          iconName = `ios-information-circle`;
+          iconName = `md-information-circle`;
         }
         return <Ionicons name={iconName} size={30} color={tintColor} />;
       }
     }),
 
-    tabBarOptions: {
-      activeTintColor: '#fff',
-      inactiveTintColor: '#999',
+    drawerBackgroundColor: 'black',
+
+    contentOptions: {
+      activeTintColor: Colors.purple,
+      inactiveTintColor: Colors.mediumGrey,
+
       labelStyle: {
-        fontSize: 11,
-        fontFamily: 'Montserrat',
-        lineHeight: 0
+        fontSize: 18,
+        fontFamily: Font.reg
       },
       style: {
-        backgroundColor: '#000',
-
-        // alignItems: 'center',
-        // justifyContent: 'space-around',
-        height: 55,
-        paddingTop: 8
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginLeft: 15
       }
     }
   }

@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+// const { width, height } = Dimensions.get('window');
 
 export const Container = {
   flex: 1,
@@ -22,7 +22,10 @@ export const Colors = {
 
 export const Font = {
   light: 'Montserrat-Light',
-  reg: 'Montserrat-Regular'
+  ...Platform.select({
+    ios: { reg: 'Montserrat' },
+    android: { reg: 'Montserrat-Regular' }
+  })
 };
 
 export const FontSize = {

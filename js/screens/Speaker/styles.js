@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   },
   description: {
     alignSelf: 'center',
+    justifyContent: 'center',
     fontFamily: Font.light,
     fontSize: FontSize.body,
     lineHeight: 24,
