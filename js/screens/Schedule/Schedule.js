@@ -3,6 +3,7 @@ import { View, Text, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class Schedule extends Component {
   render() {
@@ -19,9 +20,30 @@ class Schedule extends Component {
                   key={item.id}
                   onPress={() => navigate('Session', { session: item })}
                 >
-                  <View style={styles.event}>
-                    <Text style={styles.listTitle}>{item.title} </Text>
-                    <Text style={styles.location}>{item.location}</Text>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      width: '100%'
+                    }}
+                  >
+                    <View style={styles.event}>
+                      <Text style={styles.listTitle}>{item.title} </Text>
+                      <Text style={styles.location}>{item.location}</Text>
+                    </View>
+
+                    {/* {this.props.faveIds.includes(item.id) ? (
+                      <Ionicons
+                        name={Platform.select({
+                          ios: 'ios-heart',
+                          android: 'md-heart'
+                        })}
+                        size={25}
+                        color={Colors.red}
+                        style={styles.fave}
+                      />
+                    ) : null} */}
                   </View>
                 </TouchableHighlight>
               </View>

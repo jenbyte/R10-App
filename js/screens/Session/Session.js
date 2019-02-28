@@ -34,20 +34,29 @@ class Session extends Component {
 
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.flex}>
-          {this.props.faveIds.includes(this.props.id) ? (
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%'
+          }}
+        >
+          <Text style={styles.location}>{location} </Text>
+
+          {this.props.faveIds.includes(id) ? (
             <Ionicons
               name={Platform.select({
                 ios: 'ios-heart',
                 android: 'md-heart'
               })}
-              size={30}
+              size={25}
               color={Colors.red}
               style={styles.fave}
             />
           ) : null}
-          <Text style={styles.location}>{location} </Text>
         </View>
+
         <Text style={styles.title}>{title} </Text>
         <Text style={styles.time}>{moment(startTime).format('LT')} </Text>
         <Text style={styles.description}>{description}</Text>
@@ -65,11 +74,13 @@ class Session extends Component {
         </TouchableHighlight>
 
         <View style={styles.divider} />
-        {this.props.faveIds.includes(this.props.id) ? (
+
+        {this.props.faveIds.includes(id) ? (
           <TouchableOpacity
             style={styles.btn}
             onPress={() => {
-              console.log('pressed!!!');
+              console.log('remove!!!');
+
               this.props.removeFaveId(id);
             }}
           >
@@ -86,8 +97,9 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.btn}
             onPress={() => {
-              this.props.setFaveId(id);
               console.log('add fave!! <3');
+
+              this.props.setFaveId(id);
             }}
           >
             <LinearGradient

@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { Header } from '../../config/styles';
 import FavesContext from '../../context';
 import Faves from './Faves';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class FavesContainer extends Component {
   constructor(props) {

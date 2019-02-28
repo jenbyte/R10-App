@@ -19,6 +19,8 @@ export default class SessionContainer extends Component {
         {({ faveIds, setFaveId, removeFaveId }) => (
           <Session
             faveIds={faveIds}
+            setFaveId={setFaveId}
+            removeFaveId={removeFaveId}
             navigation={this.props.navigation}
             data={session}
           />

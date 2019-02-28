@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     color: Colors.mediumGrey,
     fontWeight: 'bold',
     fontFamily: Font.reg,
-    fontSize: FontSize.description,
+    fontSize: FontSize.body,
 
     paddingTop: 25,
     paddingBottom: 15
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   time: {
     color: Colors.red,
     fontWeight: 'bold',
-    fontSize: FontSize.description,
+    fontSize: FontSize.body,
+    fontFamily: Font.light,
     marginTop: 15,
     marginBottom: 15
   },
@@ -51,17 +52,16 @@ const styles = StyleSheet.create({
   },
 
   divider: {
-    ...Divider,
-    marginTop: 20,
-    marginBottom: 20
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: Colors.mediumGrey,
+    marginTop: 16
   },
   button: {
     color: 'white',
     alignSelf: 'center',
     fontFamily: Font.reg,
     fontSize: FontSize.description
-  },
-  platform: {}
+  }
 });
 
 export default styles;
