@@ -1,75 +1,7 @@
 import React, { Component } from 'react';
-import {
-  ScrollView,
-  View,
-  Text,
-  FlatList,
-  Image,
-  LayoutAnimation,
-  UIManager,
-  TouchableOpacity,
-  Platform
-} from 'react-native';
+import { ScrollView, View, Text, FlatList, Image } from 'react-native';
 import styles from './styles';
-import { Colors } from '../../config/styles';
-
-class Collapsible extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-    if (Platform.OS === 'android') {
-      UIManager.setLayoutAnimationEnabledExperimental &&
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-    }
-  }
-  toggle = () => {
-    LayoutAnimation.easeInEaseOut();
-    this.setState({ isOpen: !this.state.isOpen });
-  };
-
-  render() {
-    const { item } = this.props;
-    return (
-      <View style={styles.flatList}>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => this.toggle()}>
-          {this.state.isOpen ? (
-            <View>
-              <View style={{ flexDirection: 'row' }}>
-                <Text
-                  style={{
-                    paddingRight: 15,
-                    color: Colors.purple,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  &#8722;
-                </Text>
-                <Text style={styles.listTitle}>{item.title}</Text>
-              </View>
-
-              <Text style={styles.description}>{item.description}</Text>
-            </View>
-          ) : (
-            <View style={{ flexDirection: 'row' }}>
-              <Text
-                style={{
-                  paddingRight: 15,
-                  color: Colors.purple,
-                  fontWeight: 'bold'
-                }}
-              >
-                &#x002B;
-              </Text>
-              <Text style={styles.listTitle}>{item.title}</Text>
-            </View>
-          )}
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
+import Collapsible from '../../components/Collapsible';
 
 class About extends Component {
   render() {
@@ -102,6 +34,7 @@ class About extends Component {
           />
 
           <View style={styles.divider} />
+
           <Text style={styles.copyright}>
             &copy; Jennifer Yiu, RED Academy 2019
           </Text>

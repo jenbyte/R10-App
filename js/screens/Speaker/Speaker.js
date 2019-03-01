@@ -6,11 +6,13 @@ import {
   View,
   ScrollView,
   StyleSheet,
-  Linking
+  Linking,
+  Platform
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import { Button } from '../../config/styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Speaker extends Component {
   render() {
@@ -19,7 +21,23 @@ export default class Speaker extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.bioHeading}>About the Speaker</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}
+        >
+          <TouchableHighlight onPress={() => goBack()}>
+            <Icon
+              name={Platform.select({ ios: 'ios-close', android: 'md-close' })}
+              size={30}
+              color={'white'}
+            />
+          </TouchableHighlight>
+          <Text style={styles.bioHeading}>About the Speaker</Text>
+          <View />
+        </View>
 
         <View style={styles.wrapper}>
           {/* <ScrollView contentContainerStyle={styles.scroll}> */}

@@ -1,5 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { Container, Font, FontSize, Divider } from '../../config/styles';
+import {
+  Container,
+  Colors,
+  Font,
+  FontSize,
+  Divider
+} from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,16 +29,20 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
 
-  flatList: {
-    //
-  },
   listTitle: {
     color: '#9963ea',
     fontWeight: '600',
     fontFamily: Font.reg,
     fontSize: FontSize.body,
 
-    marginBottom: 15
+    marginBottom: 15,
+    paddingLeft: 15
+  },
+  bullet: {
+    color: Colors.purple,
+    fontWeight: 'bold',
+
+    margin: 'auto'
   },
   description: {
     fontFamily: Font.light,

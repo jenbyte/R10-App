@@ -1,36 +1,39 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+import {
+  Container,
+  Colors,
+  Font,
+  FontSize,
+  Divider
+} from '../../config/styles';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingRight: 20,
-    paddingLeft: 20
+  divider: {
+    ...Divider
   },
-  logo: {
-    borderBottomWidth: 1,
-    borderColor: '#e6e6e6'
-  },
-  title: {
-    // color: '#999999',
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 15
-  },
-
-  flatList: {
-    lineHeight: 5
+  event: {
+    margin: 15,
+    width: Dimensions.get('window').width * 0.9
   },
   listTitle: {
-    color: '#9963ea',
+    fontSize: 16,
     fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 15
+    fontFamily: Font.reg,
+    marginBottom: 4
   },
-  description: {
-    // color: '#999'
+  location: {
+    color: Colors.mediumGrey,
+    fontWeight: 'bold',
+    fontFamily: Font.reg
+  },
+  time: {
+    backgroundColor: Colors.lightGrey,
+    fontWeight: 'bold',
+    fontFamily: Font.reg,
+
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 15
   }
 });
 
