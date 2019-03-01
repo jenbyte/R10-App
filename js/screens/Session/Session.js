@@ -79,8 +79,6 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.btn}
             onPress={() => {
-              console.log('remove!!!');
-
               this.props.removeFaveId(id);
             }}
           >
@@ -97,8 +95,6 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.btn}
             onPress={() => {
-              console.log('add fave!! <3');
-
               this.props.setFaveId(id);
             }}
           >

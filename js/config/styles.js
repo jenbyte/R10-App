@@ -30,7 +30,7 @@ export const Font = {
 
 export const FontSize = {
   title: 24,
-  subtitle: 20,
+  subtitle: 18,
   body: 16,
   description: 18
 };

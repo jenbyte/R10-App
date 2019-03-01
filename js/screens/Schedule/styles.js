@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import {
   Container,
   Colors,
@@ -15,9 +15,8 @@ const styles = StyleSheet.create({
     ...Divider
   },
   event: {
-    marginTop: 15,
-    marginBottom: 15,
-    marginLeft: 15
+    margin: 15,
+    width: Dimensions.get('window').width * 0.9
   },
   listTitle: {
     fontSize: 16,

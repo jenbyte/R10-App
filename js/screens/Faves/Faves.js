@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text, SectionList, TouchableHighlight } from 'react-native';
+import {
+  Platform,
+  View,
+  Text,
+  SectionList,
+  TouchableHighlight
+} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';
+import { Colors } from '../../config/styles';
 
 class Faves extends Component {
   render() {
     let { navigate } = this.props.navigation;
     console.log(this.props);
-    console.log(faveIds);
     return (
       <View style={styles.container}>
-        {/* {faveIds ? } */}
-        <SectionList
+        {/* <SectionList
           renderItem={({ item }) => {
+            console.log('hihihi', item);
             return (
               <View style={styles.divider}>
-                <TouchableHighlight //   style={styles.event}
+                <TouchableHighlight
                   key={item.id}
                   onPress={() => navigate('Session', { session: item })}
                 >
@@ -24,6 +30,15 @@ class Faves extends Component {
                     <Text style={styles.listTitle}>{item.title} </Text>
                     <Text style={styles.location}>{item.location}</Text>
                   </View>
+                  <Ionicons
+                    name={Platform.select({
+                      ios: 'ios-heart',
+                      android: 'md-heart'
+                    })}
+                    size={25}
+                    color={Colors.red}
+                    style={styles.fave}
+                  />
                 </TouchableHighlight>
               </View>
             );
@@ -33,7 +48,7 @@ class Faves extends Component {
           )}
           sections={this.props.data}
           keyExtractor={item => item.id}
-        />
+        /> */}
       </View>
     );
   }

@@ -5,7 +5,7 @@ import Schedule from './Schedule';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { ActivityIndicator, Text } from 'react-native';
 import { Header } from '../../config/styles';
-import { FavesContext } from '../../context';
+import FavesContext from '../../context';
 
 export default class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -37,23 +37,28 @@ export default class ScheduleContainer extends Component {
           }
         `}
       >
-        {/* <FavesContext.Consumer> */}
-        {({ loading, error, faveIds, data }) => {
+        {({ loading, error, data }) => {
           if (loading)
             return (
               <ActivityIndicator size="large" style={{ height: '100%' }} />
             );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
           console.log(error);
+
           return (
-            <Schedule
-              faveIds={faveIds}
-              data={formatSessionData(data.allSessions)}
-              navigation={this.props.navigation}
-            />
+            <FavesContext.Consumer>
+              {({ faveIds }) => {
+                return (
+                  <Schedule
+                    faveIds={faveIds}
+                    data={formatSessionData(data.allSessions)}
+                    navigation={this.props.navigation}
+                  />
+                );
+              }}
+            </FavesContext.Consumer>
           );
         }}
-        {/* </FavesContext.Consumer> */}
       </Query>
     );
   }

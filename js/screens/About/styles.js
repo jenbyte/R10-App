@@ -22,11 +22,15 @@ const styles = StyleSheet.create({
 
     marginBottom: 15
   },
+
+  flatList: {
+    //
+  },
   listTitle: {
     color: '#9963ea',
     fontWeight: '600',
     fontFamily: Font.reg,
-    fontSize: FontSize.subtitle,
+    fontSize: FontSize.body,
 
     marginBottom: 15
   },

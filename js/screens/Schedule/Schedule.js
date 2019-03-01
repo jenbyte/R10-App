@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, SectionList, TouchableHighlight } from 'react-native';
+import {
+  Platform,
+  View,
+  Text,
+  SectionList,
+  TouchableHighlight
+} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Colors } from '../../config/styles';
 
 class Schedule extends Component {
   render() {
@@ -13,37 +20,48 @@ class Schedule extends Component {
     return (
       <View style={styles.container}>
         <SectionList
+          keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
               <View style={styles.divider}>
-                <TouchableHighlight //   style={styles.event}
+                <TouchableHighlight
                   key={item.id}
-                  onPress={() => navigate('Session', { session: item })}
+                  onPress={() => {
+                    if (!item.speaker) {
+                      navigate('', {});
+                    } else {
+                      navigate('Session', { session: item });
+                    }
+                  }}
                 >
                   <View
                     style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      width: '100%'
+                      flexDirection: 'row'
                     }}
                   >
                     <View style={styles.event}>
                       <Text style={styles.listTitle}>{item.title} </Text>
-                      <Text style={styles.location}>{item.location}</Text>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <Text style={styles.location}>{item.location}</Text>
+                        {this.props.faveIds.includes(item.id) ? (
+                          <Ionicons
+                            name={Platform.select({
+                              ios: 'ios-heart',
+                              android: 'md-heart'
+                            })}
+                            size={20}
+                            color={Colors.red}
+                            style={styles.fave}
+                          />
+                        ) : null}
+                      </View>
                     </View>
-
-                    {/* {this.props.faveIds.includes(item.id) ? (
-                      <Ionicons
-                        name={Platform.select({
-                          ios: 'ios-heart',
-                          android: 'md-heart'
-                        })}
-                        size={25}
-                        color={Colors.red}
-                        style={styles.fave}
-                      />
-                    ) : null} */}
                   </View>
                 </TouchableHighlight>
               </View>
@@ -53,7 +71,6 @@ class Schedule extends Component {
             <Text style={styles.time}>{moment(title).format('LT')}</Text>
           )}
           sections={this.props.data}
-          keyExtractor={item => item.id}
         />
       </View>
     );
