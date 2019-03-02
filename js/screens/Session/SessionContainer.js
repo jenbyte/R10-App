@@ -26,10 +26,6 @@ export default class SessionContainer extends Component {
           />
         )}
       </FavesContext.Consumer>
-
-      // <View>
-      //   <Session data={session} navigation={this.props.navigation} />
-      // </View>
     );
   }
 }

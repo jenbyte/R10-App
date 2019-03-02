@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import About from './About';
 import { Header } from '../../config/styles';
+import { ActivityIndicator } from 'react-native';
 
 export default class AboutContainer extends Component {
   static navigationOptions = {
@@ -26,7 +27,12 @@ export default class AboutContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          console.log(data);
+          if (loading)
+            return (
+              <ActivityIndicator size="large" style={{ height: '100%' }} />
+            );
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
+          console.log(error);
 
           return <About data={data} />;
         }}

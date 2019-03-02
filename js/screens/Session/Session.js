@@ -113,4 +113,4 @@ class Session extends Component {
   }
 }
 
-export default withNavigation(Session);
+export default Session;

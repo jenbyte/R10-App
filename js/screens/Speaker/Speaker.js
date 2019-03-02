@@ -21,47 +21,49 @@ export default class Speaker extends Component {
 
     return (
       <View style={styles.container}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '100%'
-          }}
-        >
-          <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
-            <View>
-              <Icon
-                name={Platform.select({
-                  ios: 'ios-close',
-                  android: 'md-close'
-                })}
-                size={60}
-                color={'white'}
-              />
-            </View>
-          </TouchableHighlight>
-
-          <Text style={styles.bioHeading}>About the Speaker</Text>
-          <View />
-        </View>
-
-        {/* <View style={styles.wrapper}> */}
-        <ScrollView contentContainerStyle={styles.wrapper}>
-          <Image
+        <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
+          <View
             style={{
-              alignSelf: 'center',
-              width: 120,
-              height: 120,
-              borderRadius: 60
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: 30,
+              paddingBottom: 15,
+              height: 100,
+              width: '80%'
             }}
-            source={{ uri: speaker.image }}
-          />
-          <Text style={styles.title}>{speaker.name}</Text>
-          <Text style={styles.description}>{speaker.bio}</Text>
+          >
+            <Icon
+              name={Platform.select({
+                ios: 'ios-close',
+                android: 'md-close'
+              })}
+              size={45}
+              color={'white'}
+              style={{ justifyContent: 'flex-start' }}
+            />
+
+            <Text style={styles.bioHeading}>About the Speaker</Text>
+          </View>
+        </TouchableHighlight>
+
+        <View style={styles.wrapper}>
+          <ScrollView contentContainerStyle={styles.scroll}>
+            <Image
+              style={{
+                alignSelf: 'center',
+                width: 120,
+                height: 120,
+                borderRadius: 60
+              }}
+              source={{ uri: speaker.image }}
+            />
+            <Text style={styles.title}>{speaker.name}</Text>
+            <Text style={styles.description}>{speaker.bio}</Text>
+          </ScrollView>
 
           <TouchableHighlight
-            style={{ zIndex: 5 }}
+            style={{ marginTop: -20 }}
             onPress={() => Linking.openURL(`${speaker.url}`)}
           >
             <LinearGradient
@@ -73,8 +75,7 @@ export default class Speaker extends Component {
               <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
             </LinearGradient>
           </TouchableHighlight>
-        </ScrollView>
-        {/* </View> */}
+        </View>
       </View>
     );
   }

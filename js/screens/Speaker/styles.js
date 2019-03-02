@@ -19,17 +19,16 @@ const styles = StyleSheet.create({
     height: '80%',
     padding: 20,
     paddingTop: 25,
-    paddingBottom: 50
+    marginBottom: 50
   },
 
   bioHeading: {
     color: '#fff',
     fontSize: FontSize.description,
     fontFamily: Font.reg,
-    // height: 150,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginBottom: 25
+    // height: 50,
+    alignSelf: 'center'
+    // justifyContent: 'center',
   },
   title: {
     alignSelf: 'center',
@@ -43,8 +42,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontFamily: Font.light,
     fontSize: FontSize.body,
-    lineHeight: 24,
-    marginBottom: 15
+    lineHeight: 24
+    // marginBottom: 15
   },
   wikiLink: {
     color: 'white',

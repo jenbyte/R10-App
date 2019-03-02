@@ -14,14 +14,16 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 class Collapsible extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isOpen: false,
+      rotateValue: new Animated.Value(0.01)
+    };
+
     if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental &&
         UIManager.setLayoutAnimationEnabledExperimental(true);
     }
-    this.state = {
-      isOpen: false,
-      rotateValue: new Animated.Value()
-    };
   }
 
   animateSpin = () => {
@@ -46,12 +48,12 @@ class Collapsible extends Component {
     });
 
     return (
-      <View style={styles.flatList}>
+      <View style={{}}>
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
             this.toggle();
-            this.animateSpin();
+            // this.animateSpin();
           }}
         >
           {this.state.isOpen ? (
@@ -59,7 +61,10 @@ class Collapsible extends Component {
               <View style={{ flexDirection: 'row' }}>
                 <View>
                   <Animated.View
-                    style={{ transform: [{ rotate: rotateIcon }] }}
+                    style={{
+                      transform: [{ rotate: rotateIcon }],
+                      backgroundColor: 'transparent'
+                    }}
                   >
                     <Ionicons
                       name={Platform.select({
@@ -79,7 +84,12 @@ class Collapsible extends Component {
           ) : (
             <View style={{ flexDirection: 'row' }}>
               <View>
-                <Animated.View style={{ transform: [{ rotate: rotateIcon }] }}>
+                <Animated.View
+                  style={{
+                    transform: [{ rotate: rotateIcon }],
+                    backgroundColor: 'transparent'
+                  }}
+                >
                   <Ionicons
                     name={Platform.select({
                       ios: 'ios-add',
