@@ -1,8 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Container, Colors, Font, FontSize } from '../../config/styles';
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000',
@@ -16,13 +14,12 @@ const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: '#fff',
     borderRadius: 7,
-    height: '75%',
+    alignSelf: 'flex-end',
+
+    height: '80%',
     padding: 20,
-    paddingTop: 25
-  },
-  scroll: {
-    alignItems: 'center',
-    justifyContent: 'center'
+    paddingTop: 25,
+    paddingBottom: 50
   },
 
   bioHeading: {
@@ -30,7 +27,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.description,
     fontFamily: Font.reg,
     // height: 150,
-    // alignSelf: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
     marginBottom: 25
   },

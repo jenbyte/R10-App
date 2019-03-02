@@ -8,6 +8,7 @@ import { FavesProvider } from './context';
 export default class App extends Component {
   render() {
     StatusBar.setBarStyle('light-content', true);
+
     return (
       <ApolloProvider client={client}>
         <FavesProvider>

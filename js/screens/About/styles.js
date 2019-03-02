@@ -28,22 +28,6 @@ const styles = StyleSheet.create({
 
     marginBottom: 15
   },
-
-  listTitle: {
-    color: '#9963ea',
-    fontWeight: '600',
-    fontFamily: Font.reg,
-    fontSize: FontSize.body,
-
-    marginBottom: 15,
-    paddingLeft: 15
-  },
-  bullet: {
-    color: Colors.purple,
-    fontWeight: 'bold',
-
-    margin: 'auto'
-  },
   description: {
     fontFamily: Font.light,
     fontSize: FontSize.body,

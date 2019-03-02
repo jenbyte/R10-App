@@ -25,22 +25,29 @@ export default class Speaker extends Component {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
+            width: '100%'
           }}
         >
-          <TouchableHighlight onPress={() => goBack()}>
-            <Icon
-              name={Platform.select({ ios: 'ios-close', android: 'md-close' })}
-              size={30}
-              color={'white'}
-            />
+          <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
+            <View>
+              <Icon
+                name={Platform.select({
+                  ios: 'ios-close',
+                  android: 'md-close'
+                })}
+                size={60}
+                color={'white'}
+              />
+            </View>
           </TouchableHighlight>
+
           <Text style={styles.bioHeading}>About the Speaker</Text>
           <View />
         </View>
 
-        <View style={styles.wrapper}>
-          {/* <ScrollView contentContainerStyle={styles.scroll}> */}
+        {/* <View style={styles.wrapper}> */}
+        <ScrollView contentContainerStyle={styles.wrapper}>
           <Image
             style={{
               alignSelf: 'center',
@@ -66,8 +73,8 @@ export default class Speaker extends Component {
               <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
             </LinearGradient>
           </TouchableHighlight>
-          {/* </ScrollView> */}
-        </View>
+        </ScrollView>
+        {/* </View> */}
       </View>
     );
   }
