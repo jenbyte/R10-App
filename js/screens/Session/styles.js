@@ -56,6 +56,9 @@ const styles = StyleSheet.create({
     borderTopColor: Colors.mediumGrey,
     marginTop: 16
   },
+  btnWrap: {
+    marginTop: 20
+  },
   button: {
     color: 'white',
     alignSelf: 'center',

@@ -1,49 +1,66 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { Container, Colors, Font, FontSize } from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingRight: 25,
-    paddingLeft: 25,
-    width: '100%',
+    color: '#fff',
+    flex: 1,
+    padding: 15,
+    paddingBottom: 30,
     height: Dimensions.get('window').height
   },
+  speakerHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 15,
+    paddingBottom: 0,
+
+    ...Platform.select({
+      ios: { height: 100 },
+      android: { paddingTop: 25, paddingBottom: 25 }
+    })
+  },
+  speakerTitle: {
+    color: '#fff',
+    fontSize: FontSize.description,
+    fontFamily: Font.reg
+  },
+
   wrapper: {
     backgroundColor: '#fff',
     borderRadius: 7,
-    alignSelf: 'flex-end',
-
-    height: '80%',
-    padding: 20,
-    paddingTop: 25,
-    marginBottom: 50
+    flex: 1,
+    maxHeight: 625,
+    padding: 25
   },
-
-  bioHeading: {
-    color: '#fff',
-    fontSize: FontSize.description,
-    fontFamily: Font.reg,
-    // height: 50,
-    alignSelf: 'center'
-    // justifyContent: 'center',
+  avatar: {
+    alignSelf: 'center',
+    width: 120,
+    height: 120,
+    borderRadius: 60
   },
-  title: {
+  name: {
     alignSelf: 'center',
     fontSize: FontSize.title,
     fontFamily: Font.reg,
     marginTop: 15,
-    marginBottom: 15
+    marginBottom: 20
   },
-  description: {
-    alignSelf: 'center',
-    justifyContent: 'center',
+  bio: {
     fontFamily: Font.light,
-    fontSize: FontSize.body,
-    lineHeight: 24
-    // marginBottom: 15
+    lineHeight: 26,
+    marginBottom: 20,
+
+    ...Platform.select({
+      ios: { fontSize: FontSize.body },
+      android: { fontSize: FontSize.description }
+    })
+  },
+  scroll: {
+    flex: 1,
+    height: 300
   },
   wikiLink: {
     color: 'white',

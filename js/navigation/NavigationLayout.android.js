@@ -58,7 +58,10 @@ export default createDrawerNavigator(
     Schedule: ScheduleStack,
     Map: MapStack,
     Faves: FavesStack,
-    About: AboutStack
+    About: AboutStack,
+    navigationOptions: () => ({
+      headerBackTitle: null
+    })
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -80,6 +83,7 @@ export default createDrawerNavigator(
     }),
 
     drawerBackgroundColor: 'black',
+    gesturesEnabled: false,
 
     contentOptions: {
       activeTintColor: Colors.purple,
@@ -90,9 +94,9 @@ export default createDrawerNavigator(
         fontFamily: Font.reg
       },
       style: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 15
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // marginLeft: 15
       }
     }
   }

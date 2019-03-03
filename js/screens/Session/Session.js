@@ -12,7 +12,7 @@ import {
 import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
-import { Button } from '../../config/styles';
+import { Btn } from '../../config/styles';
 import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
@@ -77,8 +77,9 @@ class Session extends Component {
 
         {this.props.faveIds.includes(id) ? (
           <TouchableOpacity
-            style={styles.btn}
+            style={styles.btnWrap}
             onPress={() => {
+              console.log('pressed@');
               this.props.removeFaveId(id);
             }}
           >
@@ -86,15 +87,16 @@ class Session extends Component {
               colors={['#9963ea', '#8797D6']}
               start={{ x: 0.0, y: 1.0 }}
               end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Button }]}
+              style={[StyleSheet.absoluteFill, { ...Btn }]}
             >
               <Text style={styles.button}>Remove from Faves</Text>
             </LinearGradient>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            style={styles.btn}
+            style={styles.btnWrap}
             onPress={() => {
+              console.log('pressed@');
               this.props.setFaveId(id);
             }}
           >
@@ -102,7 +104,7 @@ class Session extends Component {
               colors={['#9963ea', '#8797D6']}
               start={{ x: 0.0, y: 1.0 }}
               end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Button }]}
+              style={[StyleSheet.absoluteFill, { ...Btn }]}
             >
               <Text style={styles.button}>Add to Faves</Text>
             </LinearGradient>

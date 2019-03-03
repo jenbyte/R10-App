@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import {
+  Animated,
+  Button,
   Image,
-  Text,
-  TouchableHighlight,
-  View,
+  Linking,
+  Platform,
   ScrollView,
   StyleSheet,
-  Linking,
-  Platform
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  View
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
-import { Button } from '../../config/styles';
+import { Btn } from '../../config/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Speaker extends Component {
@@ -22,60 +25,39 @@ export default class Speaker extends Component {
     return (
       <View style={styles.container}>
         <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginTop: 30,
-              paddingBottom: 15,
-              height: 100,
-              width: '80%'
-            }}
-          >
+          <View style={styles.speakerHeader}>
             <Icon
               name={Platform.select({
                 ios: 'ios-close',
                 android: 'md-close'
               })}
-              size={45}
+              size={30}
               color={'white'}
               style={{ justifyContent: 'flex-start' }}
             />
-
-            <Text style={styles.bioHeading}>About the Speaker</Text>
+            <Text style={styles.speakerTitle}>About the Speaker</Text>
+            <View />
           </View>
         </TouchableHighlight>
 
-        <View style={styles.wrapper}>
-          <ScrollView contentContainerStyle={styles.scroll}>
-            <Image
-              style={{
-                alignSelf: 'center',
-                width: 120,
-                height: 120,
-                borderRadius: 60
-              }}
-              source={{ uri: speaker.image }}
-            />
-            <Text style={styles.title}>{speaker.name}</Text>
-            <Text style={styles.description}>{speaker.bio}</Text>
-          </ScrollView>
+        {/* <View style={styles.wrapper}> */}
+        <ScrollView style={styles.wrapper}>
+          <Image style={styles.avatar} source={{ uri: speaker.image }} />
+          <Text style={styles.name}>{speaker.name}</Text>
+          <Text style={styles.bio}>{speaker.bio}</Text>
 
-          <TouchableHighlight
-            style={{ marginTop: -20 }}
-            onPress={() => Linking.openURL(`${speaker.url}`)}
-          >
+          <TouchableOpacity onPress={() => Linking.openURL(`${speaker.url}`)}>
             <LinearGradient
               colors={['#9963ea', '#8797D6']}
               start={{ x: 0.0, y: 1.0 }}
               end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Button }]}
+              style={[StyleSheet.absoluteFill, { ...Btn }]}
             >
               <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
             </LinearGradient>
-          </TouchableHighlight>
-        </View>
+          </TouchableOpacity>
+        </ScrollView>
+        {/* </View> */}
       </View>
     );
   }

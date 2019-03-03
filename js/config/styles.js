@@ -46,15 +46,9 @@ export const Divider = {
   borderBottomColor: '#999999'
 };
 
-export const Button = {
+export const Btn = {
   height: 45,
-  // width: '70%',
   justifyContent: 'center',
   margin: 15,
   borderRadius: 25
 };
-
-// ...Plateform.select({
-//   ios: { color: '' },
-//   android: { color: '' }
-// })

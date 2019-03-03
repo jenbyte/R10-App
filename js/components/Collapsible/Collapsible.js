@@ -61,10 +61,7 @@ class Collapsible extends Component {
               <View style={{ flexDirection: 'row' }}>
                 <View>
                   <Animated.View
-                    style={{
-                      transform: [{ rotate: rotateIcon }],
-                      backgroundColor: 'transparent'
-                    }}
+                    style={{ transform: [{ rotate: rotateIcon }] }}
                   >
                     <Ionicons
                       name={Platform.select({
@@ -84,12 +81,7 @@ class Collapsible extends Component {
           ) : (
             <View style={{ flexDirection: 'row' }}>
               <View>
-                <Animated.View
-                  style={{
-                    transform: [{ rotate: rotateIcon }],
-                    backgroundColor: 'transparent'
-                  }}
-                >
+                <Animated.View style={{ transform: [{ rotate: rotateIcon }] }}>
                   <Ionicons
                     name={Platform.select({
                       ios: 'ios-add',

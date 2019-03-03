@@ -8,14 +8,14 @@ import {
 } from '../../config/styles';
 
 const styles = StyleSheet.create({
-  container: {
-    // ...Container
-  },
   divider: {
     ...Divider
   },
   event: {
-    margin: 15,
+    margin: 20,
+    marginLeft: 20,
+    marginRight: 15,
+
     width: Dimensions.get('window').width * 0.9
   },
   listTitle: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
     paddingTop: 5,
     paddingBottom: 5,
-    paddingLeft: 15
+    paddingLeft: 20
   }
 });
 
