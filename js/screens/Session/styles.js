@@ -1,11 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
-import {
-  Container,
-  Colors,
-  Font,
-  FontSize,
-  Divider
-} from '../../config/styles';
+import { Colors, Font, FontSize } from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,7 +55,8 @@ const styles = StyleSheet.create({
   },
   button: {
     color: 'white',
-    alignSelf: 'center',
+    // alignSelf: 'center',
+    // justifyContent: 'center',
     fontFamily: Font.reg,
     fontSize: FontSize.description
   }

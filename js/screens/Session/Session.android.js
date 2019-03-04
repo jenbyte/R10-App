@@ -76,18 +76,19 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.btnWrap}
             onPress={() => {
-              console.log('pressed@');
-              this.props.removeFaveId(id);
+              // console.log('pressed@');
+              // this.props.removeFaveId(id);
             }}
           >
-            <LinearGradient
-              colors={['#9963ea', '#8797D6']}
-              start={{ x: 0.0, y: 1.0 }}
-              end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Btn }]}
-            >
+            <View>
+              <LinearGradient
+                colors={['#9963ea', '#8797D6']}
+                start={{ x: 0.0, y: 1.0 }}
+                end={{ x: 1.0, y: 0.0 }}
+                style={[StyleSheet.absoluteFill, { ...Btn }]}
+              />
               <Text style={styles.button}>Remove from Faves</Text>
-            </LinearGradient>
+            </View>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
@@ -97,14 +98,15 @@ class Session extends Component {
               this.props.setFaveId(id);
             }}
           >
-            <LinearGradient
-              colors={['#9963ea', '#8797D6']}
-              start={{ x: 0.0, y: 1.0 }}
-              end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Btn }]}
-            >
+            <View>
+              <LinearGradient
+                colors={['#9963ea', '#8797D6']}
+                start={{ x: 0.0, y: 1.0 }}
+                end={{ x: 1.0, y: 0.0 }}
+                style={[StyleSheet.absoluteFill, { ...Btn }]}
+              />
               <Text style={styles.button}>Add to Faves</Text>
-            </LinearGradient>
+            </View>
           </TouchableOpacity>
         )}
       </ScrollView>

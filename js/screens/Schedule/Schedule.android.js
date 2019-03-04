@@ -70,14 +70,7 @@ class Schedule extends Component {
 }
 
 Schedule.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    startTime: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-  }).isRequired,
-
+  data: PropTypes.array.isRequired,
   navigation: PropTypes.object.isRequired,
   faveIds: PropTypes.arrayOf(PropTypes.string).isRequired
 };

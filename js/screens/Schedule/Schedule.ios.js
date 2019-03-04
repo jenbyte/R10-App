@@ -70,7 +70,8 @@ class Schedule extends Component {
 
 Schedule.propTypes = {
   data: PropTypes.array.isRequired,
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default withNavigation(Schedule);

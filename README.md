@@ -2,7 +2,7 @@
 
 <!-- -->
 
-|                                                      R10                                                      |                                                     App                                                      |
+|                                                   Schedule                                                    |                                                   Sesssion                                                   |
 | :-----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
 | ![R10 ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png) | ![R10 ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png) |
 
@@ -24,7 +24,7 @@ To run on Android, open emulator, then run: `react-native run-android`
 
 ## Technologies Used
 
-React Native, GraphQL, RN Maps, RN Linear Gradient, moment
+React Native, GraphQL, Async Storage, Apollo, Node.js
 
 ## Author
 
