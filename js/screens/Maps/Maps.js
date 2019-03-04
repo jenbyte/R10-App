@@ -23,7 +23,8 @@ const Maps = ({ latitude, longitude }) => {
 };
 
 Maps.propTypes = {
-  data: PropTypes.object.isRequired
+  longitude: PropTypes.number.isRequired,
+  latitude: PropTypes.number.isRequired
 };
 
 export default Maps;

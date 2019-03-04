@@ -1,9 +1,8 @@
-# R10 📱
+# R10 App
 
 <!-- -->
 
-|                                              Schedule on ios                                              |                                                 Session                                                  |
-| :-------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
+:-------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
 | ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png) | ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png) |
 
 <!-- -->
@@ -11,7 +10,7 @@
 
 ## Description
 
-An app used to display the schedule for "R10", a developer conference. This mobile application was created using React Native and can be run on both iOS and android.
+An app used to display the schedule for speakers presenting at the developer conference, "R10". This mobile application was created using React Native and can be run on both iOS and android.
 
 ## Setup
 

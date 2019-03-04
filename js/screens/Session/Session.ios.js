@@ -115,8 +115,6 @@ class Session extends Component {
 Session.propTypes = {
   data: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired
-  // setFaveId: PropTypes.object.isRequired,
-  // removeFaveId: PropTypes.object.isRequired
 };
 
 export default Session;
