@@ -113,8 +113,18 @@ class Session extends Component {
 }
 
 Session.propTypes = {
-  data: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    speaker: PropTypes.object.isRequired
+  }).isRequired,
+
+  navigation: PropTypes.object.isRequired,
+  setFaveId: PropTypes.func.isRequired,
+  removeFaveId: PropTypes.func.isRequired
 };
 
 export default Session;

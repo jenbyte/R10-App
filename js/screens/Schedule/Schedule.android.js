@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  View,
-  Text,
-  SectionList,
-  TouchableHighlight
-} from 'react-native';
+import { View, Text, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';
@@ -17,6 +11,7 @@ class Schedule extends Component {
   render() {
     let { navigate } = this.props.navigation;
 
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <SectionList
@@ -75,8 +70,16 @@ class Schedule extends Component {
 }
 
 Schedule.propTypes = {
-  data: PropTypes.array.isRequired,
-  navigation: PropTypes.object.isRequired
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+  }).isRequired,
+
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default withNavigation(Schedule);

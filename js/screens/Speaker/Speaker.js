@@ -38,7 +38,6 @@ class Speaker extends Component {
           </View>
         </TouchableHighlight>
 
-        {/* <View style={styles.wrapper}> */}
         <ScrollView style={styles.wrapper}>
           <Image style={styles.avatar} source={{ uri: speaker.image }} />
           <Text style={styles.name}>{speaker.name}</Text>
@@ -55,7 +54,6 @@ class Speaker extends Component {
             </LinearGradient>
           </TouchableOpacity>
         </ScrollView>
-        {/* </View> */}
       </View>
     );
   }

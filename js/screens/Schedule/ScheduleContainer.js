@@ -6,8 +6,9 @@ import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import { ActivityIndicator, Text } from 'react-native';
 import { Header } from '../../config/styles';
 import FavesContext from '../../context';
+import PropTypes from 'prop-types';
 
-export default class ScheduleContainer extends Component {
+class ScheduleContainer extends Component {
   static navigationOptions = {
     title: 'Schedule',
     headerTintColor: '#fff',
@@ -63,3 +64,9 @@ export default class ScheduleContainer extends Component {
     );
   }
 }
+
+ScheduleContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export default ScheduleContainer;

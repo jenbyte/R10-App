@@ -12,13 +12,6 @@ const GradientHeader = props => (
       end={{ x: 1.0, y: 0.0 }}
       style={[StyleSheet.absoluteFill, { height: 100, width: '100%' }]}
     />
-
-    <Ionicons
-      name={'md-menu'}
-      size={30}
-      color={'white'}
-      onPress={() => props.navigation.toggleDrawer()}
-    />
     <Header {...props} />
   </View>
 );
@@ -26,7 +19,15 @@ const GradientHeader = props => (
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
-
+  headerLeft: () => (
+    <Ionicons
+      name={'md-menu'}
+      size={30}
+      color={'white'}
+      style={{ marginLeft: 20, marginTop: 10, marginBottom: 6 }}
+      onPress={() => navigation.toggleDrawer()}
+    />
+  ),
   headerStyle: {
     backgroundColor: 'transparent'
   }

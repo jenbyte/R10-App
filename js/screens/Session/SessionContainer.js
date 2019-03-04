@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Session from './Session';
 import { Header } from '../../config/styles';
 import FavesContext from '../../context';
+import PropTypes from 'prop-types';
 
-export default class SessionContainer extends Component {
+class SessionContainer extends Component {
   static navigationOptions = {
     title: 'Session',
     headerTintColor: '#fff',
@@ -28,3 +29,9 @@ export default class SessionContainer extends Component {
     );
   }
 }
+
+SessionContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export default SessionContainer;

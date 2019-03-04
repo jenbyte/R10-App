@@ -2,15 +2,17 @@
 
 <!-- -->
 
-:-------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
-| ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png) | ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png) |
+|                                                      R10                                                      |                                                     App                                                      |
+| :-----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+| ![R10 ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png) | ![R10 ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png) |
 
 <!-- -->
 <!-- -->
 
 ## Description
 
-An app used to display the schedule for speakers presenting at the developer conference, "R10". This mobile application was created using React Native and can be run on both iOS and android.
+R10 is a conference that focuses on just about any topic related to
+dev. This app displays the schedule for speakers presenting. This mobile application was created using React Native and can be run on both iOS and android.
 
 ## Setup
 

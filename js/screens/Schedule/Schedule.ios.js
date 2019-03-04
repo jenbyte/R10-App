@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  View,
-  Text,
-  SectionList,
-  TouchableHighlight
-} from 'react-native';
+import { View, Text, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';

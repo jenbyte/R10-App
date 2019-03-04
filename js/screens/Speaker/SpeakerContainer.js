@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Speaker from './Speaker';
 import { Header } from '../../config/styles';
+import PropTypes from 'prop-types';
 
-export default class SpeakerContainer extends Component {
+class SpeakerContainer extends Component {
   static navigationOptions = {
     title: 'Session',
     headerTintColor: '#fff',
@@ -15,3 +16,9 @@ export default class SpeakerContainer extends Component {
     return <Speaker speaker={speaker} navigation={this.props.navigation} />;
   }
 }
+
+SpeakerContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export default SpeakerContainer;
