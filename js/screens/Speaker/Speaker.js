@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Animated,
-  Button,
   Image,
   Linking,
   Platform,

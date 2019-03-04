@@ -50,10 +50,7 @@ class Schedule extends Component {
                         <Text style={styles.location}>{item.location}</Text>
                         {this.props.faveIds.includes(item.id) ? (
                           <Ionicons
-                            name={Platform.select({
-                              ios: 'ios-heart',
-                              android: 'md-heart'
-                            })}
+                            name={'md-heart'}
                             size={20}
                             color={Colors.red}
                             style={styles.fave}

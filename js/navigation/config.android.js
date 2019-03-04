@@ -17,24 +17,14 @@ const GradientHeader = props => (
       end={{ x: 1.0, y: 0.0 }}
       style={[StyleSheet.absoluteFill, { height: 100, width: '100%' }]}
     />
-    <View
-      style={{
-        // backgroundColor: 'white',
-        // overflow: 'hidden',
-        // flexDirection: 'row',
-        paddingLeft: 20
-        // justifyContent: 'flex-start',
-        // alignItems: 'center'
-      }}
-    >
-      <Ionicons
-        name={'md-menu'}
-        size={30}
-        color={'white'}
-        onPress={() => props.navigation.toggleDrawer()}
-      />
-      <Header {...props} />
-    </View>
+
+    <Ionicons
+      name={'md-menu'}
+      size={30}
+      color={'white'}
+      onPress={() => props.navigation.toggleDrawer()}
+    />
+    <Header {...props} />
   </View>
 );
 

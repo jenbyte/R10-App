@@ -46,10 +46,7 @@ class Session extends Component {
 
           {this.props.faveIds.includes(id) ? (
             <Ionicons
-              name={Platform.select({
-                ios: 'ios-heart',
-                android: 'md-heart'
-              })}
+              name={'md-heart'}
               size={25}
               color={Colors.red}
               style={styles.fave}

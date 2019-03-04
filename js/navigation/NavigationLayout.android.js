@@ -58,10 +58,7 @@ export default createDrawerNavigator(
     Schedule: ScheduleStack,
     Map: MapStack,
     Faves: FavesStack,
-    About: AboutStack,
-    navigationOptions: () => ({
-      headerBackTitle: null
-    })
+    About: AboutStack
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
