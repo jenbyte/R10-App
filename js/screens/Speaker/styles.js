@@ -62,10 +62,6 @@ const styles = StyleSheet.create({
       android: { fontSize: FontSize.description }
     })
   },
-  scroll: {
-    flex: 1,
-    height: 300
-  },
   wikiLink: {
     color: 'white',
     alignSelf: 'center',
