@@ -6,9 +6,9 @@ import {
   Text,
   Image,
   TouchableHighlight,
-  TouchableOpacity,
-  Platform
+  TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
@@ -111,5 +111,10 @@ class Session extends Component {
     );
   }
 }
+
+Session.propTypes = {
+  data: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired
+};
 
 export default Session;

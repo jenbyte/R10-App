@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './styles';
 import MapView, { Marker } from 'react-native-maps';
+import PropTypes from 'prop-types';
 
 const Maps = ({ latitude, longitude }) => {
   return (
@@ -19,6 +20,10 @@ const Maps = ({ latitude, longitude }) => {
       />
     </MapView>
   );
+};
+
+Maps.propTypes = {
+  data: PropTypes.object.isRequired
 };
 
 export default Maps;

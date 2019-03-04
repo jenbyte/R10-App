@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Session from './Session';
-import { ActivityIndicator, Text, View } from 'react-native';
 import { Header } from '../../config/styles';
 import FavesContext from '../../context';
 

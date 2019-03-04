@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { Header } from '../../config/styles';
 import Maps from './Maps';
-import { MapView } from 'react-native-maps';
+import { View } from 'react-native';
 
 export default class MapsContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   static navigationOptions = {
     title: 'Map',
     headerTintColor: '#fff',
@@ -16,6 +11,20 @@ export default class MapsContainer extends Component {
   };
 
   render() {
-    return <Maps latitude={49.2633479} longitude={-123.1403165} />;
+    return (
+      // <View>
+      //   {({ loading, error }) => {
+      //     if (loading)
+      //       return (
+      //         <ActivityIndicator size="large" style={{ height: '100%' }} />
+      //       );
+      //     if (error) return <Text>{`Error! ${error.message}`}</Text>;
+      //     console.log(error);
+
+      // return
+      <Maps latitude={49.2633479} longitude={-123.1403165} />
+      //   }}
+      // </View>
+    );
   }
 }

@@ -6,9 +6,9 @@ import {
   Text,
   Image,
   TouchableHighlight,
-  TouchableOpacity,
-  Platform
+  TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
@@ -16,10 +16,11 @@ import { Btn } from '../../config/styles';
 import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
+import PropTypes from 'prop-types';
 
 class Session extends Component {
   render() {
-    console.log(this.props);
+    console.log('$$$$$$$', this.props);
 
     const {
       id,
@@ -111,5 +112,12 @@ class Session extends Component {
     );
   }
 }
+
+Session.propTypes = {
+  data: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  setFaveId: PropTypes.object.isRequired,
+  removeFaveId: PropTypes.object.isRequired
+};
 
 export default Session;

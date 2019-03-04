@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { ScrollView, View, Text, FlatList, Image } from 'react-native';
 import styles from './styles';
 import Collapsible from '../../components/Collapsible';
+import PropTypes from 'prop-types';
 
 class About extends Component {
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -43,4 +45,9 @@ class About extends Component {
     );
   }
 }
+
+About.propTypes = {
+  data: PropTypes.object.isRequired
+};
+
 export default About;

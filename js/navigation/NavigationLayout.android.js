@@ -80,7 +80,6 @@ export default createDrawerNavigator(
     }),
 
     drawerBackgroundColor: 'black',
-    gesturesEnabled: false,
 
     contentOptions: {
       activeTintColor: Colors.purple,
@@ -89,11 +88,6 @@ export default createDrawerNavigator(
       labelStyle: {
         fontSize: 18,
         fontFamily: Font.reg
-      },
-      style: {
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // marginLeft: 15
       }
     }
   }

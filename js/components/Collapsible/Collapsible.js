@@ -10,11 +10,11 @@ import {
 } from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
 class Collapsible extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isOpen: false,
       rotateValue: new Animated.Value(0.01)
@@ -53,7 +53,6 @@ class Collapsible extends Component {
           activeOpacity={0.8}
           onPress={() => {
             this.toggle();
-            // this.animateSpin();
           }}
         >
           {this.state.isOpen ? (
@@ -100,5 +99,9 @@ class Collapsible extends Component {
     );
   }
 }
+
+Collapsible.propTypes = {
+  item: PropTypes.object.isRequired
+};
 
 export default Collapsible;

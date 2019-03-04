@@ -14,10 +14,10 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import { Btn } from '../../config/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
-export default class Speaker extends Component {
+class Speaker extends Component {
   render() {
-    console.log('#############', this.props);
     const { speaker } = this.props;
 
     return (
@@ -60,3 +60,9 @@ export default class Speaker extends Component {
     );
   }
 }
+
+Speaker.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export default Speaker;
