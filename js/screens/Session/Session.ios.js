@@ -16,7 +16,6 @@ import { Btn } from '../../config/styles';
 import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
-import PropTypes from 'prop-types';
 
 class Session extends Component {
   render() {
@@ -115,9 +114,9 @@ class Session extends Component {
 
 Session.propTypes = {
   data: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
-  setFaveId: PropTypes.object.isRequired,
-  removeFaveId: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired
+  // setFaveId: PropTypes.object.isRequired,
+  // removeFaveId: PropTypes.object.isRequired
 };
 
 export default Session;

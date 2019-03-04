@@ -2,16 +2,16 @@
 
 <!-- -->
 
-![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png)
-
-![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png)
+|                                              Schedule on ios                                              |                                                 Session                                                  |
+| :-------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
+| ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-schedule.png) | ![ScreenShot](https://github.com/jenjjy/R10-App/blob/master/js/assets/images/screenshot-ios-session.png) |
 
 <!-- -->
 <!-- -->
 
 ## Description
 
-A mobile application to display the schedule "R10", a developer conference.
+An app used to display the schedule for "R10", a developer conference. This mobile application was created using React Native and can be run on both iOS and android.
 
 ## Setup
 
@@ -27,6 +27,4 @@ React Native, GraphQL, RN Maps, RN Linear Gradient, moment
 
 ## Author
 
-**Jennifer Yiu**, _Fullstack Front-End Developer_
-
-**LinkedIn:** [Jennifer Yiu](https://www.linkedin.com/in/jennifer-yiu-12145836/)
+[Jennifer Yiu](https://www.linkedin.com/in/jennifer-yiu-12145836/), _Fullstack Front-End Developer_
