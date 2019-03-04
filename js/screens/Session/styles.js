@@ -50,8 +50,14 @@ const styles = StyleSheet.create({
     borderTopColor: Colors.mediumGrey,
     marginTop: 16
   },
-  btnWrap: {
-    marginTop: 20
+  removeBtnWrap: {
+    margin: 30,
+    marginTop: 15
+  },
+  addBtnWrap: {
+    margin: 60,
+    marginTop: 15,
+    marginBottom: 20
   },
   btnText: {
     color: 'white',

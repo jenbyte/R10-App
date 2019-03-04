@@ -15,6 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Btn } from '../../config/styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
+import { withNavigation } from 'react-navigation';
 
 class Session extends Component {
   render() {
@@ -39,7 +40,7 @@ class Session extends Component {
             width: '100%'
           }}
         >
-          <Text style={styles.location}>{location} </Text>
+          <Text style={styles.location}>{location}</Text>
 
           {this.props.faveIds.includes(id) ? (
             <Ionicons
@@ -71,9 +72,8 @@ class Session extends Component {
 
         {this.props.faveIds.includes(id) ? (
           <TouchableOpacity
-            style={styles.btnWrap}
+            style={styles.removeBtnWrap}
             onPress={() => {
-              // console.log('pressed@');
               this.props.removeFaveId(id);
             }}
           >
@@ -89,9 +89,8 @@ class Session extends Component {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            style={styles.btnWrap}
+            style={styles.addBtnWrap}
             onPress={() => {
-              console.log('pressed@');
               this.props.setFaveId(id);
             }}
           >
@@ -126,4 +125,4 @@ Session.propTypes = {
   removeFaveId: PropTypes.func.isRequired
 };
 
-export default Session;
+export default withNavigation(Session);

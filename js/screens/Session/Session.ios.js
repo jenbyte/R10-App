@@ -73,9 +73,8 @@ class Session extends Component {
 
         {this.props.faveIds.includes(id) ? (
           <TouchableOpacity
-            style={styles.btnWrap}
+            style={styles.removeBtnWrap}
             onPress={() => {
-              console.log('pressed@');
               this.props.removeFaveId(id);
             }}
           >
@@ -90,9 +89,8 @@ class Session extends Component {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            style={styles.btnWrap}
+            style={styles.addBtnWrap}
             onPress={() => {
-              console.log('pressed@');
               this.props.setFaveId(id);
             }}
           >

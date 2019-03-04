@@ -21,13 +21,20 @@ export const sharedNavigationOptions = navigation => ({
   header: props => <GradientHeader {...props} />,
   headerLeft: () => (
     <Ionicons
-      name={'md-menu'}
+      name={
+        navigation.state.routeName === 'Session' ? 'md-arrow-back' : 'md-menu'
+      }
       size={30}
       color={'white'}
       style={{ marginLeft: 20, marginTop: 10, marginBottom: 6 }}
-      onPress={() => navigation.toggleDrawer()}
+      onPress={() => {
+        navigation.state.routeName === 'Session'
+          ? navigation.goBack()
+          : navigation.toggleDrawer();
+      }}
     />
   ),
+
   headerStyle: {
     backgroundColor: 'transparent'
   }
