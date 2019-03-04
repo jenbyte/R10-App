@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
-import { Container, Colors, Font, FontSize } from '../../config/styles';
+import { Font, FontSize } from '../../config/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,8 +32,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 7,
     flex: 1,
-    maxHeight: 625,
-    padding: 25
+    padding: 25,
+
+    ...Platform.select({
+      ios: { maxHeight: 625 },
+      android: { maxHeight: 1000 }
+    })
   },
   avatar: {
     alignSelf: 'center',
@@ -66,7 +70,8 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     fontFamily: Font.reg,
-    fontSize: FontSize.description
+    fontSize: FontSize.description,
+    marginTop: 25
   }
 });
 

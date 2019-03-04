@@ -14,16 +14,15 @@ import PropTypes from 'prop-types';
 
 class Collapsible extends Component {
   constructor(props) {
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
     super(props);
     this.state = {
       isOpen: false,
       rotateValue: new Animated.Value(0.01)
     };
-
-    if (Platform.OS === 'android') {
-      UIManager.setLayoutAnimationEnabledExperimental &&
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-    }
   }
 
   animateSpin = () => {

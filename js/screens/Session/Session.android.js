@@ -13,14 +13,11 @@ import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import { Btn } from '../../config/styles';
-import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
 
 class Session extends Component {
   render() {
-    console.log(this.props);
-
     const {
       id,
       title,
@@ -77,7 +74,7 @@ class Session extends Component {
             style={styles.btnWrap}
             onPress={() => {
               // console.log('pressed@');
-              // this.props.removeFaveId(id);
+              this.props.removeFaveId(id);
             }}
           >
             <View>
@@ -87,7 +84,7 @@ class Session extends Component {
                 end={{ x: 1.0, y: 0.0 }}
                 style={[StyleSheet.absoluteFill, { ...Btn }]}
               />
-              <Text style={styles.button}>Remove from Faves</Text>
+              <Text style={styles.btnAndroid}>Remove from Faves</Text>
             </View>
           </TouchableOpacity>
         ) : (
@@ -105,7 +102,7 @@ class Session extends Component {
                 end={{ x: 1.0, y: 0.0 }}
                 style={[StyleSheet.absoluteFill, { ...Btn }]}
               />
-              <Text style={styles.button}>Add to Faves</Text>
+              <Text style={styles.btnAndroid}>Add to Faves</Text>
             </View>
           </TouchableOpacity>
         )}

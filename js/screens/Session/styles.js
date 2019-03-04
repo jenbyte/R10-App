@@ -53,12 +53,20 @@ const styles = StyleSheet.create({
   btnWrap: {
     marginTop: 20
   },
-  button: {
+  btnText: {
     color: 'white',
-    // alignSelf: 'center',
-    // justifyContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
     fontFamily: Font.reg,
     fontSize: FontSize.description
+  },
+  btnAndroid: {
+    color: 'white',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description,
+    marginTop: 25
   }
 });
 

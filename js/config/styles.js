@@ -1,11 +1,7 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native';
-
-// const { width, height } = Dimensions.get('window');
+import { StyleSheet, Platform } from 'react-native';
 
 export const Container = {
   flex: 1,
-  // justifyContent: 'center',
-  // alignItems: 'center',
   paddingRight: 25,
   paddingLeft: 25
 };
@@ -49,6 +45,7 @@ export const Divider = {
 export const Btn = {
   height: 45,
   justifyContent: 'center',
+  alignItems: 'center',
   margin: 15,
   borderRadius: 25
 };

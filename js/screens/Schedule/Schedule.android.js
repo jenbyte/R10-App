@@ -11,7 +11,6 @@ class Schedule extends Component {
   render() {
     let { navigate } = this.props.navigation;
 
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <SectionList

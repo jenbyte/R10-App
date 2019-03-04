@@ -44,14 +44,15 @@ class Speaker extends Component {
           <Text style={styles.bio}>{speaker.bio}</Text>
 
           <TouchableOpacity onPress={() => Linking.openURL(`${speaker.url}`)}>
-            <LinearGradient
-              colors={['#9963ea', '#8797D6']}
-              start={{ x: 0.0, y: 1.0 }}
-              end={{ x: 1.0, y: 0.0 }}
-              style={[StyleSheet.absoluteFill, { ...Btn }]}
-            >
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <LinearGradient
+                colors={['#9963ea', '#8797D6']}
+                start={{ x: 0.0, y: 1.0 }}
+                end={{ x: 1.0, y: 0.0 }}
+                style={[StyleSheet.absoluteFill, { ...Btn }]}
+              />
               <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
-            </LinearGradient>
+            </View>
           </TouchableOpacity>
         </ScrollView>
       </View>

@@ -1,11 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {
-  Container,
-  Colors,
-  Font,
-  FontSize,
-  Divider
-} from '../../config/styles';
+import { Colors, Font, FontSize, Divider } from '../../config/styles';
 
 const styles = StyleSheet.create({
   divider: {

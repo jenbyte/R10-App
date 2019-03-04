@@ -13,7 +13,6 @@ import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import { Btn } from '../../config/styles';
-import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
 
@@ -86,7 +85,7 @@ class Session extends Component {
               end={{ x: 1.0, y: 0.0 }}
               style={[StyleSheet.absoluteFill, { ...Btn }]}
             >
-              <Text style={styles.button}>Remove from Faves</Text>
+              <Text style={styles.btnText}>Remove from Faves</Text>
             </LinearGradient>
           </TouchableOpacity>
         ) : (
@@ -103,7 +102,7 @@ class Session extends Component {
               end={{ x: 1.0, y: 0.0 }}
               style={[StyleSheet.absoluteFill, { ...Btn }]}
             >
-              <Text style={styles.button}>Add to Faves</Text>
+              <Text style={styles.btnText}>Add to Faves</Text>
             </LinearGradient>
           </TouchableOpacity>
         )}
