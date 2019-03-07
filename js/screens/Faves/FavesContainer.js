@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { ActivityIndicator, Platform, View, Text } from 'react-native';
-import { Header, Colors, Font } from '../../config/styles';
+import { ActivityIndicator, View, Text } from 'react-native';
+import { Header, Font } from '../../config/styles';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import FavesContext from '../../context';
 import Faves from './Faves';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from '../Speaker/styles';
 
 export default class FavesContainer extends Component {

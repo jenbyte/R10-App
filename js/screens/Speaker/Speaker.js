@@ -4,7 +4,6 @@ import {
   Linking,
   Platform,
   ScrollView,
-  StyleSheet,
   Text,
   TouchableHighlight,
   View
@@ -17,7 +16,7 @@ import GradientButton from '../../components/GradientButton';
 class Speaker extends Component {
   render() {
     const { speaker } = this.props;
-    console.log(this.props, '^^^^^^');
+
     return (
       <View style={styles.container}>
         <TouchableHighlight
@@ -50,23 +49,6 @@ class Speaker extends Component {
               Linking.openURL(`${speaker.url}`);
             }}
           />
-          {/* <TouchableOpacity onPress={() => Linking.openURL(`${speaker.url}`)}>
-            <View
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: 60
-              }}
-            >
-              <LinearGradient
-                colors={['#9963ea', '#8797D6']}
-                start={{ x: 0.0, y: 1.0 }}
-                end={{ x: 1.0, y: 0.0 }}
-                style={[StyleSheet.absoluteFill, { ...Btn }]}
-              />
-              <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
-            </View>
-          </TouchableOpacity> */}
         </ScrollView>
       </View>
     );

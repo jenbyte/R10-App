@@ -17,7 +17,6 @@ import { withNavigation } from 'react-navigation';
 import GradientButton from '../../components/GradientButton';
 
 const Session = props => {
-  console.log(props);
   const { id, title, location, startTime, description, speaker } = props.item;
   const { faveIds, removeFaveId, setFaveId } = props;
   const { navigate } = props.navigation;
