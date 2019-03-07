@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, SectionList, TouchableHighlight } from 'react-native';
+import {
+  View,
+  Text,
+  SectionList,
+  TouchableHighlight,
+  Platform
+} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import { withNavigation } from 'react-navigation';
@@ -9,7 +15,7 @@ import PropTypes from 'prop-types';
 
 class Schedule extends Component {
   render() {
-    let { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
     return (
       <View style={styles.container}>
@@ -19,20 +25,20 @@ class Schedule extends Component {
             return (
               <View style={styles.divider}>
                 <TouchableHighlight
+                  underlayColor={'transparent'}
                   key={item.id}
                   onPress={() => {
                     if (!item.speaker) {
                       navigate('', {});
                     } else {
-                      navigate('Session', { session: item });
+                      navigate('Session', {
+                        item: item,
+                        id: item.speaker.id
+                      });
                     }
                   }}
                 >
-                  <View
-                    style={{
-                      flexDirection: 'row'
-                    }}
-                  >
+                  <View style={{ flexDirection: 'row' }}>
                     <View style={styles.event}>
                       <Text style={styles.listTitle}>{item.title} </Text>
                       <View
@@ -45,7 +51,10 @@ class Schedule extends Component {
                         <Text style={styles.location}>{item.location}</Text>
                         {this.props.faveIds.includes(item.id) ? (
                           <Ionicons
-                            name={'md-heart'}
+                            name={Platform.select({
+                              android: 'md-heart',
+                              ios: 'ios-heart'
+                            })}
                             size={20}
                             color={Colors.red}
                             style={styles.fave}

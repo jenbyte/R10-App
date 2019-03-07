@@ -1,13 +1,29 @@
 import React from 'react';
 import styles from './styles';
-import { Image } from 'react-native';
+import { Text, View } from 'react-native';
+import { Font } from '../../config/styles';
 
 const Maps = () => {
   return (
-    <Image
-      style={styles.map}
-      source={require('../../assets/images/R10-map.png')}
-    />
+    <View
+      style={{
+        alignSelf: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        paddingTop: 100,
+        margin: 'auto'
+      }}
+    >
+      <Text
+        style={{
+          fontFamily: Font.reg,
+          fontSize: 20,
+          textAlign: 'center'
+        }}
+      >
+        Maps is currently unavailable
+      </Text>
+    </View>
   );
 };
 

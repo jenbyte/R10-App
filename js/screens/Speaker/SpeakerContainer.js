@@ -12,7 +12,7 @@ class SpeakerContainer extends Component {
 
   render() {
     const speaker = this.props.navigation.getParam('speaker');
-
+    console.log(speaker);
     return <Speaker speaker={speaker} navigation={this.props.navigation} />;
   }
 }

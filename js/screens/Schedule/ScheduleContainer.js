@@ -44,7 +44,7 @@ class ScheduleContainer extends Component {
               <ActivityIndicator size="large" style={{ height: '100%' }} />
             );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log(error);
+          console.log('ERROR:', error);
 
           return (
             <FavesContext.Consumer>

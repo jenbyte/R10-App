@@ -15,26 +15,26 @@ import PropTypes from 'prop-types';
 
 class Faves extends Component {
   render() {
-    let { navigate } = this.props.navigation;
-    console.log(this.props);
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <SectionList
           keyExtractor={item => item.id}
           sections={this.props.sessions}
           renderItem={({ item }) => {
-            console.log(item);
             return (
               <View style={styles.divider}>
                 <TouchableHighlight
+                  underlayColor={'transparent'}
                   key={item.id}
                   onPress={() => {
-                    navigate('Session', { session: item });
+                    navigate('Session', { item: item, id: item.speaker.id });
                   }}
                 >
                   <View style={{ flexDirection: 'row' }}>
                     <View style={styles.event}>
-                      <Text style={styles.listTitle}>{item.title} </Text>
+                      <Text style={styles.listTitle}>{item.title}</Text>
                       <View
                         style={{
                           flexDirection: 'row',

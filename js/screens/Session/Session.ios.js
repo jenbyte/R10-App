@@ -29,7 +29,7 @@ class Session extends Component {
       speaker
     } = this.props.data;
 
-    let { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
     return (
       <ScrollView contentContainerStyle={styles.container}>
@@ -59,7 +59,10 @@ class Session extends Component {
 
         <Text style={styles.location}>Presented by:</Text>
 
-        <TouchableHighlight onPress={() => navigate('Speaker', { speaker })}>
+        <TouchableHighlight
+          underlayColor={'transparent'}
+          onPress={() => navigate('Speaker', { speaker })}
+        >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image
               style={{ width: 60, height: 60, borderRadius: 30 }}

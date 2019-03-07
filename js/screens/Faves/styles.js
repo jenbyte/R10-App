@@ -28,6 +28,16 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     paddingLeft: 15
+  },
+  noFave: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    height: '100%',
+    width: '100%'
+  },
+  noFaveText: {
+    fontFamily: Font.reg,
+    fontSize: FontSize.title
   }
 });
 

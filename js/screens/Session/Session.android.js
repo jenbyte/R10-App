@@ -5,113 +5,78 @@ import {
   ScrollView,
   Text,
   Image,
-  TouchableHighlight,
-  TouchableOpacity
+  Platform,
+  TouchableHighlight
 } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import moment from 'moment';
-import LinearGradient from 'react-native-linear-gradient';
-import { Btn } from '../../config/styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
 import { withNavigation } from 'react-navigation';
+import GradientButton from '../../components/GradientButton';
 
-class Session extends Component {
-  render() {
-    const {
-      id,
-      title,
-      location,
-      startTime,
-      description,
-      speaker
-    } = this.props.data;
+const Session = props => {
+  console.log(props);
+  const { id, title, location, startTime, description, speaker } = props.item;
+  const { faveIds, removeFaveId, setFaveId } = props;
+  const { navigate } = props.navigation;
 
-    let { navigate } = this.props.navigation;
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '100%'
+        }}
+      >
+        <Text style={styles.location}>{location}</Text>
 
-    return (
-      <ScrollView contentContainerStyle={styles.container}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '100%'
-          }}
-        >
-          <Text style={styles.location}>{location}</Text>
+        {faveIds.includes(id) ? (
+          <Ionicons
+            name={Platform.select({ android: 'md-heart', ios: 'ios-heart' })}
+            size={25}
+            color={Colors.red}
+            style={styles.fave}
+          />
+        ) : null}
+      </View>
 
-          {this.props.faveIds.includes(id) ? (
-            <Ionicons
-              name={'md-heart'}
-              size={25}
-              color={Colors.red}
-              style={styles.fave}
-            />
-          ) : null}
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.time}>{moment(startTime).format('LT')} </Text>
+      <Text style={styles.description}>{description}</Text>
+
+      <Text style={styles.location}>Presented by:</Text>
+
+      <TouchableHighlight
+        underlayColor={'transparent'}
+        onPress={() => navigate('Speaker', { speaker })}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Image
+            style={{ width: 60, height: 60, borderRadius: 30 }}
+            source={{ uri: speaker.image }}
+          />
+          <Text style={styles.speaker}>{speaker.name}</Text>
         </View>
+      </TouchableHighlight>
 
-        <Text style={styles.title}>{title} </Text>
-        <Text style={styles.time}>{moment(startTime).format('LT')} </Text>
-        <Text style={styles.description}>{description}</Text>
+      <View style={styles.divider} />
 
-        <Text style={styles.location}>Presented by:</Text>
-
-        <TouchableHighlight onPress={() => navigate('Speaker', { speaker })}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Image
-              style={{ width: 60, height: 60, borderRadius: 30 }}
-              source={{ uri: speaker.image }}
-            />
-            <Text style={styles.speaker}>{speaker.name}</Text>
-          </View>
-        </TouchableHighlight>
-
-        <View style={styles.divider} />
-
-        {this.props.faveIds.includes(id) ? (
-          <TouchableOpacity
-            style={styles.removeBtnWrap}
-            onPress={() => {
-              this.props.removeFaveId(id);
-            }}
-          >
-            <View>
-              <LinearGradient
-                colors={['#9963ea', '#8797D6']}
-                start={{ x: 0.0, y: 1.0 }}
-                end={{ x: 1.0, y: 0.0 }}
-                style={[StyleSheet.absoluteFill, { ...Btn }]}
-              />
-              <Text style={styles.btnAndroid}>Remove from Faves</Text>
-            </View>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity
-            style={styles.addBtnWrap}
-            onPress={() => {
-              this.props.setFaveId(id);
-            }}
-          >
-            <View>
-              <LinearGradient
-                colors={['#9963ea', '#8797D6']}
-                start={{ x: 0.0, y: 1.0 }}
-                end={{ x: 1.0, y: 0.0 }}
-                style={[StyleSheet.absoluteFill, { ...Btn }]}
-              />
-              <Text style={styles.btnAndroid}>Add to Faves</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      </ScrollView>
-    );
-  }
-}
+      <GradientButton
+        title={faveIds.includes(id) ? 'Remove from Faves' : 'Add to Faves'}
+        handlePress={() => {
+          faveIds.includes(id) ? removeFaveId(id) : setFaveId(id);
+        }}
+      />
+    </ScrollView>
+  );
+};
 
 Session.propTypes = {
-  data: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,

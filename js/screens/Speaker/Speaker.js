@@ -15,14 +15,18 @@ import styles from './styles';
 import { Btn } from '../../config/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+import GradientButton from '../../components/GradientButton';
 
 class Speaker extends Component {
   render() {
     const { speaker } = this.props;
-
+    console.log(this.props, '^^^^^^');
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
+        <TouchableHighlight
+          underlayColor={'transparent'}
+          onPress={() => this.props.navigation.goBack()}
+        >
           <View style={styles.speakerHeader}>
             <Icon
               name={Platform.select({
@@ -43,7 +47,13 @@ class Speaker extends Component {
           <Text style={styles.name}>{speaker.name}</Text>
           <Text style={styles.bio}>{speaker.bio}</Text>
 
-          <TouchableOpacity onPress={() => Linking.openURL(`${speaker.url}`)}>
+          <GradientButton
+            title={'Read More on Wikipedia'}
+            handlePress={() => {
+              Linking.openURL(`${speaker.url}`);
+            }}
+          />
+          {/* <TouchableOpacity onPress={() => Linking.openURL(`${speaker.url}`)}>
             <View
               style={{
                 justifyContent: 'center',
@@ -59,7 +69,7 @@ class Speaker extends Component {
               />
               <Text style={styles.wikiLink}>Read More on Wikipedia</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </ScrollView>
       </View>
     );

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { ActivityIndicator, View, Text } from 'react-native';
-import { Header } from '../../config/styles';
+import { ActivityIndicator, Platform, View, Text } from 'react-native';
+import { Header, Colors, Font } from '../../config/styles';
 import { formatSessionData } from '../../lib/helpers/dataFormatHelpers';
 import FavesContext from '../../context';
 import Faves from './Faves';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import styles from '../Speaker/styles';
 
 export default class FavesContainer extends Component {
   static navigationOptions = {
@@ -43,21 +45,40 @@ export default class FavesContainer extends Component {
               <ActivityIndicator size="large" style={{ height: '100%' }} />
             );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log(error);
+          console.log('ERROR:', error);
 
           return (
             <FavesContext.Consumer>
               {({ faveIds }) => {
-                let filteredSessions = data.allSessions.filter(event => {
+                const filteredSessions = data.allSessions.filter(event => {
                   return faveIds.includes(event.id);
                 });
 
-                return (
-                  <Faves
-                    sessions={formatSessionData(filteredSessions)}
-                    faveIds={faveIds}
-                  />
-                );
+                {
+                  if (filteredSessions.length === 0) {
+                    return (
+                      <View style={styles.noFave}>
+                        <Text
+                          style={{
+                            fontFamily: Font.reg,
+                            fontSize: 20,
+                            textAlign: 'center',
+                            paddingTop: 100
+                          }}
+                        >
+                          No favourites added yet
+                        </Text>
+                      </View>
+                    );
+                  } else {
+                    return (
+                      <Faves
+                        sessions={formatSessionData(filteredSessions)}
+                        faveIds={faveIds}
+                      />
+                    );
+                  }
+                }
               }}
             </FavesContext.Consumer>
           );

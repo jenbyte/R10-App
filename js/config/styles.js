@@ -11,13 +11,12 @@ export const Colors = {
   lightGrey: '#e6e6e6',
   blue: '#8797D6',
   purple: '#9963ea',
-  red: '#cf392a',
-  black: '#000',
-  white: '#fff'
+  red: '#cf392a'
 };
 
 export const Font = {
   light: 'Montserrat-Light',
+
   ...Platform.select({
     ios: { reg: 'Montserrat' },
     android: { reg: 'Montserrat-Regular' }
@@ -46,6 +45,6 @@ export const Btn = {
   height: 45,
   justifyContent: 'center',
   alignItems: 'center',
-  margin: 15,
+  margin: 20,
   borderRadius: 25
 };

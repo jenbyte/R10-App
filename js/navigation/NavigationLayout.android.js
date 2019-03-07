@@ -64,7 +64,6 @@ export default createDrawerNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       drawerIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
-
         let iconName;
         if (routeName === 'Schedule') {
           iconName = `md-calendar`;

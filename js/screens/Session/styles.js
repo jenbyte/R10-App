@@ -50,21 +50,33 @@ const styles = StyleSheet.create({
     borderTopColor: Colors.mediumGrey,
     marginTop: 16
   },
-  removeBtnWrap: {
-    margin: 30,
-    marginTop: 15
-  },
-  addBtnWrap: {
-    margin: 60,
-    marginTop: 15,
-    marginBottom: 20
-  },
-  btnText: {
+  addBtn: {
     color: 'white',
     alignSelf: 'center',
     justifyContent: 'center',
     fontFamily: Font.reg,
-    fontSize: FontSize.description
+    fontSize: FontSize.description,
+    margin: 60,
+    marginTop: 15,
+    marginBottom: 20
+  },
+  removeBtn: {
+    color: 'white',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description,
+    margin: 30,
+    marginTop: 15
+  },
+  btn: {
+    color: 'white',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontFamily: Font.reg,
+    fontSize: FontSize.description,
+    margin: 30,
+    marginTop: 15
   },
   btnAndroid: {
     color: 'white',
