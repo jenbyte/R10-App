@@ -63,7 +63,7 @@ export default class FavesContainer extends Component {
                             fontFamily: Font.reg,
                             fontSize: 20,
                             textAlign: 'center',
-                            paddingTop: 100
+                            paddingTop: 150
                           }}
                         >
                           No favourites added yet
