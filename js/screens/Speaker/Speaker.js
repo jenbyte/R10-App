@@ -7,12 +7,9 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  TouchableOpacity,
   View
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
-import { Btn } from '../../config/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 import GradientButton from '../../components/GradientButton';

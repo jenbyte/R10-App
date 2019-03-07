@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     ...Divider,
-    marginBottom: 20
+    marginBottom: 10
   },
 
   title: {
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   copyright: {
     fontFamily: Font.light,
     fontSize: FontSize.body,
+    marginTop: 20,
     marginBottom: 20
   }
 });
