@@ -13,14 +13,12 @@ import moment from 'moment';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 
-const Faves = () => {
-  const { navigate } = this.props.navigation;
-
+const Faves = props => {
   return (
     <View style={styles.container}>
       <SectionList
         keyExtractor={item => item.id}
-        sections={this.props.sessions}
+        sections={props.sessions}
         renderItem={({ item }) => {
           return (
             <View style={styles.divider}>
@@ -28,7 +26,10 @@ const Faves = () => {
                 underlayColor={'transparent'}
                 key={item.id}
                 onPress={() => {
-                  navigate('Session', { item: item, id: item.speaker.id });
+                  props.navigation.navigate('Session', {
+                    item: item,
+                    id: item.speaker.id
+                  });
                 }}
               >
                 <View style={{ flexDirection: 'row' }}>

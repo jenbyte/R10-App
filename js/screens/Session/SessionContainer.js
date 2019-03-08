@@ -33,7 +33,6 @@ class SessionContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          console.log(data, '#####');
           if (loading)
             return (
               <ActivityIndicator size="large" style={{ height: '100%' }} />

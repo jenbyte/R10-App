@@ -16,16 +16,31 @@ dev. This app displays the schedule for speakers presenting. This mobile applica
 
 ## Setup
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Run `yarn` to install all the dependencies.
+1. `git clone` this repo
+2. Run `yarn install` or `yarn` in the project directory
 
-To run on ios: `react-native run-ios`
+To run on ios:
 
-To run on Android, open emulator, then run: `react-native run-android`
+```bash
+react-native run-ios
+```
+
+To run on Android, open emulator, then run:
+
+```bash
+react-native run-android
+```
 
 ## Technologies Used
 
-React Native, GraphQL, Async Storage, Apollo, Node.js
+- React Native
+- GraphQL
+- Async Storage
+- Apollo
+- Node.js
+
+XCode and Android Studio
 
 ## Author
 
-[Jennifer Yiu](https://www.linkedin.com/in/jennifer-yiu-12145836/), _Fullstack Front-End Developer_
+[Jennifer Yiu](https://www.linkedin.com/in/jennifer-yiu-12145836/), _Fullstack Developer_

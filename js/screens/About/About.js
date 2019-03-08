@@ -4,7 +4,7 @@ import styles from './styles';
 import Collapsible from '../../components/Collapsible';
 import PropTypes from 'prop-types';
 
-const About = () => {
+const About = props => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -27,7 +27,7 @@ const About = () => {
 
         <Text style={styles.title}>Code of Conduct</Text>
         <FlatList
-          data={this.props.data.allConducts}
+          data={props.data.allConducts}
           renderItem={({ item }) => {
             return <Collapsible item={item} />;
           }}

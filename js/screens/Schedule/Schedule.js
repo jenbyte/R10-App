@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -13,9 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../../config/styles';
 import PropTypes from 'prop-types';
 
-const Schedule = () => {
-  const { navigate } = this.props.navigation;
-
+const Schedule = props => {
   return (
     <View style={styles.container}>
       <SectionList
@@ -28,9 +26,9 @@ const Schedule = () => {
                 key={item.id}
                 onPress={() => {
                   if (!item.speaker) {
-                    navigate('', {});
+                    props.navigation.navigate('', {});
                   } else {
-                    navigate('Session', {
+                    props.navigation.navigate('Session', {
                       item: item,
                       id: item.speaker.id
                     });
@@ -48,7 +46,7 @@ const Schedule = () => {
                       }}
                     >
                       <Text style={styles.location}>{item.location}</Text>
-                      {this.props.faveIds.includes(item.id) ? (
+                      {props.faveIds.includes(item.id) ? (
                         <Ionicons
                           name={Platform.select({
                             android: 'md-heart',
@@ -69,7 +67,7 @@ const Schedule = () => {
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.time}>{moment(title).format('LT')}</Text>
         )}
-        sections={this.props.data}
+        sections={props.data}
       />
     </View>
   );
